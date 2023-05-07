@@ -1,5 +1,7 @@
 import openpyxl
 from openpyxl.utils import column_index_from_string, get_column_letter
+import pandas as pd
+
 
 # загружаем файл
 wb = openpyxl.load_workbook('20230301.xlsx')
@@ -98,3 +100,13 @@ cell_u1 = sheet3.cell(row=1, column=21, value='Ср.цена Другие газ
 
 # сохраняем изменения в файл
 wb.save('20230301_py.xlsx')
+
+# Загрузка листа 'Сводная' из файла Excel
+file_name = '20230301_py.xlsx'
+sheet_name = 'Сводная таблица'
+
+df = pd.read_excel(file_name, sheet_name=sheet_name, engine='openpyxl')
+
+# Сохранение данных листа 'Сводная таблица' в файл CSV
+csv_file_name = 'Сводная таблица.csv'
+df.to_csv(csv_file_name, index=False, encoding='utf-8')
