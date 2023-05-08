@@ -108,5 +108,5 @@ sheet_name = 'Сводная таблица'
 df = pd.read_excel(file_name, sheet_name=sheet_name, engine='openpyxl')
 
 # Сохранение данных листа 'Сводная таблица' в файл CSV
-csv_file_name = 'Сводная таблица.csv'
+csv_file_name = '20230301_csv.csv'
 df.to_csv(csv_file_name, index=False, encoding='utf-8')
