@@ -25,7 +25,7 @@ CREATE TABLE "20230301_new" (
 )
 
 COPY "20230301_new"
-FROM '/Users/rasim/Desktop/Сводная_таблица.csv'
+FROM 'C:\Users\o384x\Desktop\Min_of_digRB\20230301_csv.csv'
 DELIMITER ','
 CSV
 HEADER
