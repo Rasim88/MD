@@ -1,31 +1,34 @@
 CREATE SCHEMA SvodnayaGSM
 
 CREATE TABLE "20230301_new" (
-	"Дата" varchar(10),
+	"Дата" date,
 	"Код региона" smallint,
 	"Регион" varchar(50),
-	"Н.п. АИ-92" real,
-	"Ср.цена АИ-92" real,
-	"Н.п. АИ-95" real,
-	"Ср.цена АИ-95" real,
-	"Н.п. АИ-98" real,
-	"Ср.цена АИ-98" real,
-	"Н.п. ДТ" real,
-	"Ср.цена ДТ" real,
-	"Н.п. Метан" real,
-	"Ср.цена Метан" real,
-	"Н.п. Пропан" real,
-	"Ср.цена Пропан" real,
-	"Н.п. КПГ" real,
-	"Ср.цена КПГ" real,
-	"Н.п. СУГ" real,
-	"Ср.цена СУГ" real,
-	"Н.п. Другие газы" real,
-	"Ср.цена Другие газы" real
+	"Н.п. АИ-92" numeric(10, 2),
+	"Ср.цена АИ-92" numeric(10, 2),
+	"Н.п. АИ-95" numeric(10, 2),
+	"Ср.цена АИ-95" numeric(10, 2),
+	"Н.п. АИ-98" numeric(10, 2),
+	"Ср.цена АИ-98" numeric(10, 2),
+	"Н.п. ДТ" numeric(10, 2),
+	"Ср.цена ДТ" numeric(10, 2),
+	"Н.п. Метан" numeric(10, 2),
+	"Ср.цена Метан" numeric(10, 2),
+	"Н.п. Пропан" numeric(10, 2),
+	"Ср.цена Пропан" numeric(10, 2),
+	"Н.п. КПГ" numeric(10, 2),
+	"Ср.цена КПГ" numeric(10, 2),
+	"Н.п. СУГ" numeric(10, 2),
+	"Ср.цена СУГ" numeric(10, 2),
+	"Н.п. Другие газы" numeric(10, 2),
+	"Ср.цена Другие газы" numeric(10, 2)
 )
 
-COPY "20230301"
+COPY "20230301_new"
 FROM '/Users/rasim/Desktop/Сводная_таблица.csv'
-DELIMITER ';'
+DELIMITER ','
 CSV
 HEADER
+
+SELECT *
+FROM "20230301_new"
