@@ -1,6 +1,7 @@
 CREATE SCHEMA SvodnayaGSM
-CREATE TABLE "20230301" (
-	"Дата" date,
+
+CREATE TABLE "20230301_new" (
+	"Дата" varchar(10),
 	"Код региона" smallint,
 	"Регион" varchar(50),
 	"Н.п. АИ-92" real,
@@ -22,3 +23,9 @@ CREATE TABLE "20230301" (
 	"Н.п. Другие газы" real,
 	"Ср.цена Другие газы" real
 )
+
+COPY "20230301"
+FROM '/Users/rasim/Desktop/Сводная_таблица.csv'
+DELIMITER ';'
+CSV
+HEADER
